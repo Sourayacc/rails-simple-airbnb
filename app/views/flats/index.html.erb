@@ -4,18 +4,26 @@
 
     <% @flats.each do |flat| %>
 
-       <div class = "card">
-        <div>
-        <td><%= flat.name %></td>
-        <td><%= flat.address %></td>
-        <td><%= flat.number_of_guests %></td>
-        <td><%= flat.price_per_night %></td>
-        </div>
+       <div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1614628079765-6c164f4bd970?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwYXJ0ZW1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= flat.name %></h2>
+      <p><%= flat.address %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= flat.number_of_guests %> persons</h2>
+    <h2 class="card-trip-pricing"><%= flat.price_per_night %> $ per /night</h2>
+  </div>
+  </div>
 
+  <br>
+  <br>
         <div>
-        <td class="btn btn-primary btn-sm"><%= link_to 'Show', flat %></td>
-        <td class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_flat_path(flat) %></td>
-        <td class="btn btn-secondary btn-sm"><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', flat, class: "btn btn-flat" %></td>
+        <td class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_flat_path(flat), class: "btn btn-flat" %></td>
+        <td class="btn btn-secondary btn-sm"><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-ghost" %></td>
+        <br>
+        <br>
         </div>
 
         </div>
